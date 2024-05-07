@@ -48,6 +48,7 @@
     "test": "vitest --run --typecheck",
     "test:watch": "vitest --watch",
     "type-tests": "tsc --noEmit -p tsconfig.test.json",
+    "size": "size-limit",
     "coverage": "codecov"
   },
   "peerDependencies": {
@@ -70,6 +71,8 @@
   "devDependencies": {
     "@microsoft/api-extractor": "^7.47.0",
     "@reduxjs/toolkit": "^2.2.5",
+    "@size-limit/file": "^11.1.4",
+    "@size-limit/webpack": "^11.1.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
@@ -91,6 +94,7 @@
     "react-dom": "^19.0.0",
     "redux": "^5.0.1",
     "rimraf": "^5.0.7",
+    "size-limit": "^11.1.4",
     "tsup": "^8.3.5",
     "typescript": "^5.5.4",
     "typescript-eslint": "^7.12.0",
