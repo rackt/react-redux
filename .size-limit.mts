@@ -12,55 +12,6 @@ const allNodeEnvs = ['development', 'production'] as const
 type NodeEnv = (typeof allNodeEnvs)[number]
 
 /**
- * Set of entry points from the `package.json` file.
- */
-const packageJsonEntryPoints = new Set<string>()
-
-/**
- * Recursively collects entry points from the `package.json` exports field.
- *
- * @param packageJsonExports - The exports field from `package.json`.
- * @returns A set of package entry points.
- */
-const collectPackageJsonExports = (
-  packageJsonExports:
-    | string
-    | Record<string, any>
-    | null
-    | typeof import('./package.json').exports,
-) => {
-  if (
-    typeof packageJsonExports === 'string' &&
-    packageJsonExports.endsWith('js')
-  ) {
-    packageJsonEntryPoints.add(
-      packageJsonExports.startsWith('./')
-        ? packageJsonExports
-        : `./${packageJsonExports}`,
-    )
-  } else if (packageJsonExports && typeof packageJsonExports === 'object') {
-    Object.values(packageJsonExports).forEach(collectPackageJsonExports)
-  }
-
-  return packageJsonEntryPoints
-}
-
-/**
- * Gets all package entry points from the `package.json` file.
- *
- * @returns A promise that resolves to an array of unique package entry points.
- */
-const getAllPackageEntryPoints = async () => {
-  const packageJson = (
-    await import('./package.json', { with: { type: 'json' } })
-  ).default
-
-  const packageExports = collectPackageJsonExports(packageJson.exports)
-
-  return [...packageExports]
-}
-
-/**
  * Gets all import configurations for a given entry point.
  * This function dynamically imports the specified entry point and
  * generates a size limit configuration for each named export found
@@ -121,7 +72,7 @@ const setNodeEnv = (nodeEnv: NodeEnv) => {
  * @returns A promise that resolves to a size limit configuration object.
  */
 const getAllImportsWithNodeEnv = async (nodeEnv: NodeEnv) => {
-  const allPackageEntryPoints = await getAllPackageEntryPoints()
+  const allPackageEntryPoints = ['./dist/react-redux.mjs']
 
   const allImportsFromAllEntryPoints = (
     await Promise.all(allPackageEntryPoints.map(getAllImportsForEntryPoint))
