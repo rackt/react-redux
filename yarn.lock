@@ -874,7 +874,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^11.1.4":
+"@size-limit/file@npm:^11.1.6":
   version: 11.1.6
   resolution: "@size-limit/file@npm:11.1.6"
   peerDependencies:
@@ -883,7 +883,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^11.1.4":
+"@size-limit/webpack@npm:^11.1.6":
   version: 11.1.6
   resolution: "@size-limit/webpack@npm:11.1.6"
   dependencies:
@@ -5037,8 +5037,8 @@ __metadata:
   dependencies:
     "@microsoft/api-extractor": "npm:^7.47.0"
     "@reduxjs/toolkit": "npm:^2.2.5"
-    "@size-limit/file": "npm:^11.1.4"
-    "@size-limit/webpack": "npm:^11.1.4"
+    "@size-limit/file": "npm:^11.1.6"
+    "@size-limit/webpack": "npm:^11.1.6"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.1.0"
@@ -5061,7 +5061,7 @@ __metadata:
     react-dom: "npm:^19.0.0"
     redux: "npm:^5.0.1"
     rimraf: "npm:^5.0.7"
-    size-limit: "npm:^11.1.4"
+    size-limit: "npm:^11.1.6"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^7.12.0"
@@ -5584,7 +5584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^11.1.4":
+"size-limit@npm:^11.1.6":
   version: 11.1.6
   resolution: "size-limit@npm:11.1.6"
   dependencies:
