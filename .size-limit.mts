@@ -116,7 +116,7 @@ const getSizeLimitConfig = async (): Promise<SizeLimitConfig> => {
       }),
     )
 
-    return sizeLimitConfig.concat(sizeLimitConfigWithoutDependencies)
+    return sizeLimitConfigWithoutDependencies
   }
 
   return sizeLimitConfig
