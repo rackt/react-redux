@@ -1,16 +1,25 @@
-name: Bundle Size
+name: size
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  pull-requests: write
 
 jobs:
-  build:
+  size:
     name: Check compressed size
     runs-on: ubuntu-latest
-
+    env:
+      CI_JOB_NUMBER: 1
     steps:
       - uses: actions/checkout@v4
+      - uses: EskiMojo14/size-limit-action@v2
         with:
-          fetch-depth: 1
-      - uses: preactjs/compressed-size-action@v2
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          directory: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          build_script: build
+          package_manager: yarn
+          size_margin: non-zero
