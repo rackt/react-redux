@@ -4,7 +4,7 @@ import type { Configuration } from 'webpack'
 /**
  * An array of all possible Node environments.
  */
-const allNodeEnvs = ['development', 'production'] as const
+const allNodeEnvs = ['production'] as const
 
 /**
  * Represents a specific environment for a Node.js application.
