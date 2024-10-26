@@ -76,7 +76,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@types/node": "^20.14.2",
+    "@types/node": "^22.13.1",
     "@types/prop-types": "^15.7.12",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
